@@ -5,9 +5,13 @@ This API provides endpoints for managing frames, lenses, and orders for an eyewe
 # Installation
 
 Clone the repository.
+
 Install dependencies with `composer install`.
+
 Copy `.env.example` to `.env` and configure your database settings.
+
 Run migrations with `php artisan migrate`.
+
 Seed the database with `php artisan db:seed`.
 
 
