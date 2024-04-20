@@ -17,7 +17,11 @@ return new class extends Migration
             $table->text('description');
             $table->enum('status', ['active', 'inactive']);
             $table->integer('stock')->default(0);
+            $table->enum('currency', ['usd', 'gbp', 'eur', 'jod', 'jpy']);
+            $table->decimal('price', 10, 2);
             $table->timestamps();
+
+            $table->unique(['currency', 'price']);
         });
     }
     

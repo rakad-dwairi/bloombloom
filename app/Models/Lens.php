@@ -15,13 +15,10 @@ class Lens extends Model
         'prescription_type',
         'lens_type',
         'stock',
+        'currency',
+        'price'
     ];
 
-    public function price()
-    {
-        return $this->hasOne(Price::class);
-    }
-    
     public function orders()
     {
         return $this->hasMany(Order::class);

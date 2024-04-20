@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Lens;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
-use App\Http\Controllers\API\AuthorizationException;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -30,13 +28,9 @@ class LensesController extends Controller
                 'description' => $data['description'],
                 'prescription_type' => $data['prescription_type'],
                 'lens_type' => $data['lens_type'],
-                'stock' => $data['stock']
-            ]);
-    
-            $lens->price()->create([
-                'type' => 'lens',
+                'stock' => $data['stock'],
                 'currency' => $data['currency'],
-                'price' => $data['price'],
+                'price' => $data['price']
             ]);
     
             return response()->json(['message' => 'Lens created successfully', 'lens' => $lens], 201);
@@ -66,16 +60,12 @@ class LensesController extends Controller
                 'description' => $request->input('description'),
                 'prescription_type' => $request->input('prescription_type'),
                 'lens_type' => $request->input('lens_type'),
-                'stock' => $request->input('stock')
-            ]);
-
-            $lens->save();
-
-            // Update price separately
-            $lens->price()->update([
+                'stock' => $request->input('stock'),
                 'currency' => $request->input('currency'),
                 'price' => $request->input('price'),
             ]);
+
+            $lens->save();
 
             return response()->json(['message' => 'Frame updated successfully', 'frame' => $lens], 200);
         }

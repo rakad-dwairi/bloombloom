@@ -18,7 +18,11 @@ return new class extends Migration
             $table->enum('prescription_type', ['fashion', 'single_vision', 'varifocal']);
             $table->enum('lens_type', ['classic', 'blue_light', 'transition']);
             $table->integer('stock')->default(0);
+            $table->enum('currency', ['usd', 'gbp', 'eur', 'jod', 'jpy']);
+            $table->decimal('price', 10, 2);
             $table->timestamps();
+
+            $table->unique(['currency', 'price']);
         });
     }
 

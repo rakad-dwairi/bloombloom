@@ -14,12 +14,9 @@ class Frame extends Model
         'description',
         'status',
         'stock',
+        'currency',
+        'price'
     ];
-
-    public function price()
-    {
-        return $this->hasOne(Price::class);
-    }
     
     public function orders()
     {
