@@ -14,7 +14,7 @@ class OrdersController extends Controller
     public function createCustomGlasses(Request $request)
     {
         $user = auth()->user();
-        
+
         if ($user->getUserPrivilege()->contains('user')) {
             $request->validate([
                 'frame_id' => 'required|exists:frames,id',
@@ -31,6 +31,11 @@ class OrdersController extends Controller
 
             if ($frame->stock < 1 || $lens->stock < 1) {
                 return response()->json(['message' => 'Frame or lens is out of stock'], 400);
+            }
+
+            // Check if the frame and lens have the same currency
+            if ($frame->currency !== $lens->currency) {
+                return response()->json(['message' => 'Frame and lens must have the same currency'], 400);
             }
 
             // Calculate the total price based on the user's currency
@@ -55,4 +60,5 @@ class OrdersController extends Controller
         }
         return response()->json(['message' => 'Unauthorized'], 403);
     }
+
 }
