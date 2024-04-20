@@ -40,6 +40,7 @@ form-data: username: admin
 
 http://127.0.0.1:8000/api/frames
 
+```
 {
     "name": "tearess",
     "description": "Updated Frame Description",
@@ -48,7 +49,7 @@ http://127.0.0.1:8000/api/frames
     "status": "active",
     "stock": 50
 }
-
+```
 
 ---------------------------------------------
 
@@ -56,6 +57,7 @@ http://127.0.0.1:8000/api/frames
 
 http://127.0.0.1:8000/api/frames/{id}
 
+```
 {
     "name": "tearess",
     "description": "Updated Frame Description",
@@ -64,7 +66,7 @@ http://127.0.0.1:8000/api/frames/{id}
     "status": "active",
     "stock": 50
 }
-    
+```
 
 ---------------------------------------------
 
@@ -79,6 +81,7 @@ http://127.0.0.1:8000/api/frames/{id}
 
 http://127.0.0.1:8000/api/lens
 
+```
 {
     "colour": "nig",
     "description": "Test",
@@ -88,7 +91,7 @@ http://127.0.0.1:8000/api/lens
     "currency": "usd",
     "price": "3"
 }
-
+```
 
 
 ---------------------------------------------
@@ -97,6 +100,7 @@ http://127.0.0.1:8000/api/lens
 
 http://127.0.0.1:8000/api/lens/{id}
 
+```
 {
     "colour": "nig",
     "description": "Test",
@@ -106,7 +110,7 @@ http://127.0.0.1:8000/api/lens/{id}
     "currency": "usd",
     "price": "3"
 }
-
+```
     
 
 ---------------------------------------------
@@ -122,9 +126,11 @@ http://127.0.0.1:8000/api/lens/{id}
 
 http://127.0.0.1:8000/api/orders/create
 
+```
 {
     "frame_id": 1, 
     "lens_id": 1,
     "currency": "usd"
 }
+```
 
