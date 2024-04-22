@@ -38,7 +38,7 @@ Route::middleware(['auth:api', 'admin'])->group(function () {
 Route::middleware('auth:api')->group(function () {
     Route::get('frames/active', [App\Http\Controllers\API\User\FramesController::class, 'getActiveFrames']);
 
-    Route::get('lense/active', [App\Http\Controllers\API\User\LensesController::class, 'getActiveLenses']);
+    Route::get('lense/', [App\Http\Controllers\API\User\LensesController::class, 'getAllLenses']);
 
     Route::get('orders/create', [App\Http\Controllers\API\User\OrdersController::class, 'createCustomGlasses']);
 

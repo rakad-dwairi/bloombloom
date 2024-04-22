@@ -15,7 +15,7 @@ Run migrations with `php artisan migrate`.
 Seed the database with `php artisan db:seed`.
 
 
-
+# Admin API
 
 # Post Method
 
@@ -24,7 +24,7 @@ http://127.0.0.1:8000/api/auth/register
 form-data: username: rakad
            password: password
 
-------------------------------------------
+---------------------------------------------
 
 # Post Method
 
@@ -120,7 +120,27 @@ http://127.0.0.1:8000/api/lens/{id}
 http://127.0.0.1:8000/api/lens/{id}
 
 
+---------------------------------------------------------------------------
+
+# User Api
+
+Get Method
+
+Retreive All Active Frames
+
+http://127.0.0.1:8000/api/frames/active
+
+Bearer Token
+
 ---------------------------------------------
+
+Get Method
+
+Retreive All Lenses
+
+http://127.0.0.1:8000/api/lense
+
+Bearer Token
 
 # Get Method
 
@@ -134,3 +154,4 @@ http://127.0.0.1:8000/api/orders/create
 }
 ```
 
+---------------------------------------------

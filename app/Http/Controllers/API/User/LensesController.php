@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LensesController extends Controller
 {
-    public function getActiveLenses(Request $request)
+    public function getAllLenses(Request $request)
     {
         if (Auth::user()->getUserPrivilege()->contains('user')) {
 
